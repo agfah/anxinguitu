@@ -1,0 +1,108 @@
+:root {
+    --primary: #2A4359; /* 深蓝主色 */
+    --secondary: #4CAF50; /* 医疗绿 */
+    --accent: #D4AF37; /* 强调色 */
+}
+
+.advance-directive {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--secondary);
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.condition-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.condition-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+   
+}
+
+.card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%);
+}
+
+.card-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--accent);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 1.5rem;
+   
+}
+.rules{
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.condition-text {
+    color: #555;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* 不同卡片图片 */
+.card-1 .card-image { background-image: url('../images/图片4.png') }
+.card-2 .card-image { background-image: url('../images/图片5.png') }
+.card-3 .card-image { background-image: url('../images/图片6.png') }
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-image {
+        height: 150px;
+    }
+}

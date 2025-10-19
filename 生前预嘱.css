@@ -1,0 +1,108 @@
+:root {
+    --primary: #2A4359; /* 医疗蓝 */
+    --secondary: #4CAF50; /* 生命绿 */
+    --accent: #D4AF37; /* 强调金 */
+}
+
+.advance-directive {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(42,67,89,0.1);
+}
+
+.form-title {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+}
+
+.wish-instruction {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.checkbox-group {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.custom-checkbox {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    height: 1.2em;
+    width: 1.2em;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.custom-checkbox:hover .checkmark {
+    border-color: var(--accent);
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0.35em;
+    top: 0.05em;
+    width: 0.35em;
+    height: 0.7em;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark::after {
+    display: block;
+}
+
+.option-text {
+    color: #444;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.medical-term {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .advance-directive {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+}
